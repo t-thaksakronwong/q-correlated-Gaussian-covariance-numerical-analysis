@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stochastic_cov"
+version = "0.1.0"
+description = "Covariance matrix generator and numerical spectrum analyser for fBM and fOU processes."
+authors = [{ name = "TT and KM" }]
+dependencies = [
+    "numpy",
+    "scipy",
+    "pandas",
+    "h5py",
+    "mpmath"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
