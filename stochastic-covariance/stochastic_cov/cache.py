@@ -89,13 +89,13 @@ class HDF5CacheManager:
                 del f[path]
 
             grp = f.create_group(path)
-            grp.create_dataset("cov_matrix", data=cov_matrix, compression="gzip")
+            # grp.create_dataset("cov_matrix", data=cov_matrix, compression="gzip")
             grp.create_dataset(
                 "eigenvalues", data=eigenvalues, compression="gzip"
             )
-            grp.create_dataset(
-                "eigenvectors", data=eigenvectors, compression="gzip"
-            )
+            # grp.create_dataset(
+            #     "eigenvectors", data=eigenvectors, compression="gzip"
+            # )
             grp.create_dataset("grid", data=grid)
 
             # Metadata attributes (Ordered: lmin -> lmax -> frob)

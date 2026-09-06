@@ -21,7 +21,10 @@ CSV_PATH = str(PROJECT_ROOT / "outputs" / "data" / "results_sweep.csv")
 PROCESSES = ["rl-fbm", "std-fbm", "stn-fou"]
 MATRIX_TYPES = ["path_value", "noise"]
 H_RANGE = np.round(np.arange(0.05, 0.96, 0.05), 2)
-N_RANGE = np.arange(3, 454, 5)
+N_RANGE = np.concatenate([
+    np.arange(3, 504, 5),  # Sequence 3, 8, 13, ..., 503
+    [800, 1600]            # Additional grid sizes for out-of-sample testing
+])
 GRID_TYPE = "uniform_0_1"
 INCLUDE_Y0 = True
 
